@@ -13,9 +13,7 @@ The goals / steps of this project are the following:
 
 [//]: # "Image References"
 
-[image1_1]: ./train_dist.png "Visualization"
-[image1_2]: ./valid_dist.png "Visualization"
-[image1_3]: ./test_dist.png "Visualization"
+[image1]: ./dist.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image4]: ./traffic_signs/go_straight_or_right.jpg  "Traffic Sign 1"
 [image5]: ./traffic_signs/no_entry.jpg "Traffic Sign 2"
@@ -46,12 +44,8 @@ signs data set:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-train label distribution
-![train label distribution][image1_1]
-valid label distribution
-![valid label distribution][image1_2]
-test label distribution
-![test label distribution][image1_3]
+Class distribution for train data, validation data and test data
+![train label distribution][image1]
 
 As you can see, their distributions are almost the same, which is good for training a deep learning
 model
@@ -139,7 +133,7 @@ Here are the results of the prediction:
 | Turn right ahead	| Turn right ahead |
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This compares favorably to 93.6% accuracy on the test set.
+The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This is not as good as prediction on test set. Two misclassified classes are `Pedestrain` and `Speed limit`. First of all, this is acceptable because we only test 5 new random images found online. The sample size is too small to argue the prediction capability of the network. If we look at the softmax probabilities, we will find the ground truth label is among the top 5 probabilities. Secondly, my wild guess of wrong classification of `Speed limit` and 'Pedestrain' are attributed to the fact that they are not follow the training data distribution. Their styles look quite different to training data.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
